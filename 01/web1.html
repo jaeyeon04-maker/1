@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Font (Pretendard / Inter) -->
+    <!-- Google Font (Noto Sans KR) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -32,11 +32,6 @@
                             700: '#865127',
                             800: '#6d4125',
                             900: '#5a3622',
-                        },
-                        brand: {
-                            dark: '#0F172A',
-                            card: '#1E293B',
-                            accent: '#D97706',
                         }
                     }
                 }
@@ -67,7 +62,7 @@
         <div class="max-w-6xl mx-auto px-4 py-6 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between gap-4">
             <div class="flex items-center space-x-3 text-center md:text-left">
                 <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-amber-500 to-amber-300 flex items-center justify-center text-slate-950 text-xl font-bold shadow-lg shadow-amber-500/20">
-                    <i class="fa-solid me-0.5 fa-store"></i>
+                    <i class="fa-solid fa-store"></i>
                 </div>
                 <div>
                     <div class="flex items-center justify-center md:justify-start gap-2">
@@ -82,10 +77,12 @@
             </div>
             
             <div class="flex items-center gap-3">
+                <!-- 상위 폴더(루트 index.html)로 이동하는 홈 버튼 -->
                 <a href="../index.html" 
-                   class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-xs font-semibold text-slate-200 border border-slate-700 hover:border-amber-400 transition-all duration-200 shadow-sm active:scale-95 group">
-                    <i class="fa-solid fa-house text-amber-400 group-hover:scale-110 transition-transform"></i>
-                    <span>홈</span>
+                   title="메인 홈 페이지로 이동"
+                   class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-500/10 hover:bg-amber-500 hover:text-slate-950 text-xs font-bold text-amber-400 border border-amber-500/30 transition-all duration-200 shadow-sm active:scale-95 group">
+                    <i class="fa-solid fa-house group-hover:scale-110 transition-transform"></i>
+                    <span>홈 (상위 이동)</span>
                 </a>
                 <span class="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-800 text-xs font-medium text-slate-300 border border-slate-700">
                     <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
@@ -426,7 +423,6 @@
         });
 
         function copyLink(url, btnElement) {
-            // Using execCommand for compatibility in iframe/preview environments
             const tempInput = document.createElement('input');
             tempInput.value = url;
             document.body.appendChild(tempInput);
